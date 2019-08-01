@@ -45,10 +45,25 @@ namespace RPSLS
 
         private int GetNumberOfPlayers()
         {
-            Console.WriteLine("Choose whether this is a single player or multiplayer game. " +
-                "Press 1 for single player and 2 for multiplayer.");
-            int numberOfPlayers = int.Parse(Console.ReadLine());
-            return numberOfPlayers;
+            Console.WriteLine("Press 1 for single player or 2 for multiplayer");
+            int response;
+
+            while(!int.TryParse(Console.ReadLine(), out response))
+            {
+                Console.WriteLine("You entered a word rather than a number");
+                Console.WriteLine("Press 1 for single player or 2 for multiplayer");
+            }
+            if(response < 1 || response > 2)
+            {
+                Console.WriteLine("You entered an invalid number");
+                GetNumberOfPlayers();
+                return response;
+            }
+            else
+            {
+                return response;
+            }
+            
         }
 
         private void SettingUpPlayers(int numberOfPlayers)
@@ -83,71 +98,95 @@ namespace RPSLS
                 {
                     Console.WriteLine("Scissors cuts paper. " + player1Name + " wins this round.");
                     player1.winCounter++;
+                    Console.WriteLine("The score is " + player1.winCounter + " to " + player2.winCounter + ".");
+                    Console.WriteLine("Press enter to begin the next round.");
                     Console.ReadLine();
                 }
                 else if (player1Choice == "scissors" && player2Choice == "lizard")
                 {
                     Console.WriteLine("Scissors decapitates lizard. " + player1Name + " wins this round.");
                     player1.winCounter++;
+                    Console.WriteLine("The score is " + player1.winCounter + " to " + player2.winCounter + ".");
+                    Console.WriteLine("Press enter to begin the next round.");
                     Console.ReadLine();
                 }
                 else if (player1Choice == "paper" && player2Choice == "rock")
                 {
                     Console.WriteLine("Paper covers rock. " + player1Name + " wins this round.");
                     player1.winCounter++;
+                    Console.WriteLine("The score is " + player1.winCounter + " to " + player2.winCounter + ".");
+                    Console.WriteLine("Press enter to begin the next round.");
                     Console.ReadLine();
                 }
                 else if(player1Choice == "paper" && player2Choice == "spock")
                 {
                     Console.WriteLine("Paper disproves Spock. " + player1Name + " wins this round.");
                     player1.winCounter++;
+                    Console.WriteLine("The score is " + player1.winCounter + " to " + player2.winCounter + ".");
+                    Console.WriteLine("Press enter to begin the next round.");
                     Console.ReadLine();
                 }
                 else if(player1Choice == "rock" && player2Choice == "lizard")
                 {
                     Console.WriteLine("Rock crushes lizard. " + player1Name + " wins this round.");
                     player1.winCounter++;
+                    Console.WriteLine("The score is " + player1.winCounter + " to " + player2.winCounter + ".");
+                    Console.WriteLine("Press enter to begin the next round.");
                     Console.ReadLine();
                 }
                 else if(player1Choice == "rock" && player2Choice == "scissors")
                 {
                     Console.WriteLine("Rock crushes scissors. " + player1Name + " wins this round.");
                     player1.winCounter++;
+                    Console.WriteLine("The score is " + player1.winCounter + " to " + player2.winCounter + ".");
+                    Console.WriteLine("Press enter to begin the next round.");
                     Console.ReadLine();
                 }
                 else if (player1Choice == "lizard" && player2Choice == "spock")
                 {
                     Console.WriteLine("Lizard poisons Spock. " + player1Name + " wins this round.");
                     player1.winCounter++;
+                    Console.WriteLine("The score is " + player1.winCounter + " to " + player2.winCounter + ".");
+                    Console.WriteLine("Press enter to begin the next round.");
                     Console.ReadLine();
                 }
                 else if (player1Choice == "lizard" && player2Choice == "paper")
                 {
                     Console.WriteLine("Lizard eats paper. " + player1Name + " wins this round.");
                     player1.winCounter++;
+                    Console.WriteLine("The score is " + player1.winCounter + " to " + player2.winCounter + ".");
+                    Console.WriteLine("Press enter to begin the next round.");
                     Console.ReadLine();
                 }
                 else if (player1Choice == "spock" && player2Choice == "scissors")
                 {
                     Console.WriteLine("Spock smashes scissors. " + player1Name + " wins this round.");
                     player1.winCounter++;
+                    Console.WriteLine("The score is " + player1.winCounter + " to " + player2.winCounter + ".");
+                    Console.WriteLine("Press enter to begin the next round.");
                     Console.ReadLine();
                 }
                 else if (player1Choice == "spock" && player2Choice == "rock")
                 {
                     Console.WriteLine("Spock vaporizes rock. " + player1Name + " wins this round.");
                     player1.winCounter++;
+                    Console.WriteLine("The score is " + player1.winCounter + " to " + player2.winCounter + ".");
+                    Console.WriteLine("Press enter to begin the next round.");
                     Console.ReadLine();
                 }
                 else if(player1Choice == player2Choice)
                 {
                     Console.WriteLine(player1Name + " and " + player2Name + " choose the same. This round is a tie.");
+                    Console.WriteLine("The score is " + player1.winCounter + " to " + player2.winCounter + ".");
+                    Console.WriteLine("Press enter to begin the next round.");
                     Console.ReadLine();
                 }
                 else
                 {
                     Console.WriteLine(player2Choice + " beats " + player1Choice + ". " + player2Name + "wins this round");
                     player2.winCounter++;
+                    Console.WriteLine("The score is " + player1.winCounter + " to " + player2.winCounter + ".");
+                    Console.WriteLine("Press enter to begin the next round.");
                     Console.ReadLine();
                 }
 
