@@ -6,11 +6,15 @@ using System.Threading.Tasks;
 
 namespace RPSLS
 {
-    public class ComputerClass : Player
+    class GestureOption
     {
         //member variables
-
-        //contractor
+        public string paper;
+        public string rock;
+        public string scissors;
+        public string spock;
+        public string lizard;
+        //constructor
 
         //member methods
     }

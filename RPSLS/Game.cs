@@ -18,13 +18,21 @@ namespace RPSLS
         //need to be sure the turn will restart if both the player and the opponent throw the same thing
 
         //member variables
-        public string player1;
-        public string player2;
-        public string computerPlayer;
+        public Player player1;
+        public Player player2;
+        public ComputerPlayer computerPlayer;
+        public int computerSelection;
         public int winningThreshold;
+        public GestureOption gestureOption;
 
-        //contractor
-
+        //constructor
+        public Game()
+        {
+            player1 = new Player(1);
+            player2 = new Player(2);
+            computerSelection = new Die(6);
+            winningThreshold = 3;
+        }
         //member methods
         private void DisplayRules()
         {
@@ -36,40 +44,34 @@ namespace RPSLS
                 "Lizard but loses to Rock and Spock.  Paper beats Rock and Spock but loses to " +
                 "Scissors and Lizard.  Rock beats Lizard and Scissors but loses to Spock and Paper. " +
                 "Lizard beats Paper and Spock but loses to Scissors and Rock.  Spock beats Scissors " +
-                "and Rock but loses to Paper and Lizard.");
+                "and Rock but loses to Paper and Lizard.  Press ENTER to continue.");
             Console.ReadLine();
         }
 
         public void ChooseGameType()
         {
             int chooseGame;
-            Console.WriteLine("Choose whether you would like to play against another human " +
-                "or against a computer.  Enter 1 for human, 2 for computer.");
+            Console.WriteLine("Choose whether this is a single player or multiplayer game. " +
+                "Press 1 for single player and 2 for multiplayer.");
             chooseGame = Convert.ToInt32(Console.ReadLine());
 
             if(chooseGame == 1)
             {
-                PlayAgainstHuman();
+                Console.WriteLine("single player");
+
             }
             else if(chooseGame == 2)
             {
-                PlayAgainstComputer();
+                Console.WriteLine("multiplayer");
+
             }
             else
             {
+                Console.WriteLine("Invalid Selection.");
                 ChooseGameType();
             }
         }
 
-        public void PlayAgainstHuman()
-        {
-
-        }
-
-        public void PlayAgainstComputer()
-        {
-
-        }
 
 
         public void RunGame()
