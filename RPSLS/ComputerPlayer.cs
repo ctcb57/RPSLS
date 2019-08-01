@@ -13,14 +13,19 @@ namespace RPSLS
         //contractor
 
         //member methods
-        public override void ChooseGesture()
+        public override string ChooseGesture()
         {
-
+            Random random = new Random();
+            List<string> gestures = new List<string>() { "rock", "paper", "scissors", "lizard", "spock" };
+            int index = random.Next(gestures.Count);
+            Console.WriteLine(gestures[index]);
+            return gestures[index];
         }
-        public override void ChooseName()
+        public override string ChooseName()
         {
             Console.WriteLine("Choose your opponent: Sheldon or Leonard");
             name = Console.ReadLine();
+            return name;
         }
 
 

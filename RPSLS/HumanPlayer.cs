@@ -13,15 +13,17 @@ namespace RPSLS
         //constructor
 
         //member methods
-        public override void ChooseGesture()
+        public override string ChooseGesture()
         {
-            Console.WriteLine("Choose a gesture");
+            Console.WriteLine("Choose a gesture: rock, paper, scissors, lizard, or spock");
             gesture = Console.ReadLine();
+            return gesture;
         }
-        public override void ChooseName()
+        public override string ChooseName()
         {
             Console.WriteLine("Choose your name");
             name = Console.ReadLine();
+            return name;
         }
 
     }

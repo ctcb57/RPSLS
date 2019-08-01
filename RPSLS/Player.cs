@@ -15,8 +15,8 @@ namespace RPSLS
         //constructor
 
         //member methods
-        public abstract void ChooseGesture();
+        public abstract string ChooseGesture();
 
-        public abstract void ChooseName();
+        public abstract string ChooseName();
     }
 }
