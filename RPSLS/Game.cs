@@ -48,22 +48,12 @@ namespace RPSLS
             Console.WriteLine("Press 1 for single player or 2 for multiplayer");
             int response;
 
-            while(!int.TryParse(Console.ReadLine(), out response))
+            while(!int.TryParse(Console.ReadLine(), out response) || response < 1 || response > 2)
             {
-                Console.WriteLine("You entered a word rather than a number");
+                Console.WriteLine("You entered an invalid response");
                 Console.WriteLine("Press 1 for single player or 2 for multiplayer");
             }
-            if(response < 1 || response > 2)
-            {
-                Console.WriteLine("You entered an invalid number");
-                GetNumberOfPlayers();
-                return response;
-            }
-            else
-            {
-                return response;
-            }
-            
+            return response;  
         }
 
         private void SettingUpPlayers(int numberOfPlayers)
@@ -77,6 +67,17 @@ namespace RPSLS
             {
                 player1 = new HumanPlayer();
                 player2 = new HumanPlayer();
+            }
+        }
+
+        private void askToRestartGame()
+        {
+            Console.WriteLine("Would you like to play again? Type yes or no. Any response other than yes will end the game.");
+            string response = Console.ReadLine();
+            string validResponse = response.ToLower().Trim();
+            if(validResponse == "yes")
+            {
+                RunGame();
             }
         }
 
@@ -193,7 +194,7 @@ namespace RPSLS
             }
             if(player1.winCounter > player2.winCounter)
             {
-                Console.WriteLine(player1Name + " wins the game!");
+                Console.WriteLine(player1Name + " wins the game! Press enter to continue.");
                 Console.ReadLine();
             }
             else
@@ -201,7 +202,7 @@ namespace RPSLS
                 Console.WriteLine(player2Name + " wins the game!");
                 Console.ReadLine();
             }
+            askToRestartGame();
         }
-
     }
 }

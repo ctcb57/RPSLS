@@ -23,9 +23,9 @@ namespace RPSLS
         }
         public override string ChooseName()
         {
-            Console.WriteLine("Choose your opponent: Sheldon or Leonard");
+            Console.WriteLine("Choose your opponent's name");
             name = Console.ReadLine();
-            return name;
+            return name.Trim();
         }
 
 
