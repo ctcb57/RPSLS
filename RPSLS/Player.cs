@@ -9,16 +9,14 @@ namespace RPSLS
     public abstract class Player
     {
         //member variables
-        public int playerNumber;
+        public string gesture;
         public int winCounter;
-
+        public string name;
         //constructor
-        public Player(int playerNumber)
-        {
-            this.playerNumber = playerNumber;
-            winCounter = 0;
-        }
+
         //member methods
         public abstract void ChooseGesture();
+
+        public abstract void ChooseName();
     }
 }

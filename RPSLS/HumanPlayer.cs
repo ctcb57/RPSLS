@@ -9,25 +9,20 @@ namespace RPSLS
     class HumanPlayer : Player
     {
         //member variables
-        public int selection;
+
         //constructor
-        public HumanPlayer()
-        {
 
-
-        }
         //member methods
-        public override int ChooseGesture()
+        public override void ChooseGesture()
         {
-            int selection;
-            Console.WriteLine("Enter the number for your selection: 1 = Paper, 2 = Rock, 3 = Scissors, " +
-                "4 = Lizard, 5 = Spock");
-            selection = Convert.ToInt32(Console.ReadLine());
-            if(selection < 1 || selection > 5)
-            {
-
-            }
-            return selection;
+            Console.WriteLine("Choose a gesture");
+            gesture = Console.ReadLine();
         }
+        public override void ChooseName()
+        {
+            Console.WriteLine("Choose your name");
+            name = Console.ReadLine();
+        }
+
     }
 }

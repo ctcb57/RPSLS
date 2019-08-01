@@ -9,21 +9,20 @@ namespace RPSLS
     public class ComputerPlayer : Player
     {
         //member variables
-        public Random selectionOptions;
 
         //contractor
-        public ComputerPlayer(int playerType, int winCounter)
-        {
-            this.playerType = playerType;
-            this.winCounter = winCounter;
-        }
+
         //member methods
         public override void ChooseGesture()
         {
-            int gesture = selectionOptions.Next(0, 5);
-
 
         }
+        public override void ChooseName()
+        {
+            Console.WriteLine("Choose your opponent: Sheldon or Leonard");
+            name = Console.ReadLine();
+        }
+
 
     }
 }

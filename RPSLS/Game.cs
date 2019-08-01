@@ -8,7 +8,8 @@ namespace RPSLS
 {
     class Game
     {   //Things to do for this game:
-        //write the function to display the rules of the game
+        //need to give them their name for the sake of the game aesthetic
+        //make the computer's name Sheldon
         //Need to make the class of player - player will be an abstract parent
         //create the inheritance of player to computer player
         //create a list that contains all of the options for the game
@@ -18,19 +19,15 @@ namespace RPSLS
         //need to be sure the turn will restart if both the player and the opponent throw the same thing
 
         //member variables
-        public Player player1;
-        public Player player2;
-        public ComputerPlayer computerPlayer;
-        public int computerSelection;
+        Player player1;
+        Player player2;
         public int winningThreshold;
-        public GestureOption gestureOption;
+        //place your list string here
+
 
         //constructor
         public Game()
-        {
-            player1 = new Player(1);
-            player2 = new Player(2);
-            computerSelection = new Die(6);
+        { 
             winningThreshold = 3;
         }
         //member methods
@@ -48,40 +45,37 @@ namespace RPSLS
             Console.ReadLine();
         }
 
-        public void ChooseGameType()
+        private int GetNumberOfPlayers()
         {
-            int chooseGame;
             Console.WriteLine("Choose whether this is a single player or multiplayer game. " +
                 "Press 1 for single player and 2 for multiplayer.");
-            chooseGame = Convert.ToInt32(Console.ReadLine());
+            int numberOfPlayers = int.Parse(Console.ReadLine());
+            return numberOfPlayers;
+        }
 
-            if(chooseGame == 1)
+        private void SettingUpPlayers(int numberOfPlayers)
+        {
+            if(numberOfPlayers == 1)
             {
-                Console.WriteLine("single player");
-
-            }
-            else if(chooseGame == 2)
-            {
-                Console.WriteLine("multiplayer");
-
+                player1 = new HumanPlayer();
+                player2 = new ComputerPlayer();
             }
             else
             {
-                Console.WriteLine("Invalid Selection.");
-                ChooseGameType();
+                player1 = new HumanPlayer();
+                player2 = new HumanPlayer();
             }
         }
-
 
 
         public void RunGame()
         {
             DisplayRules();
 
-            ChooseGameType();
-
-
-
+            int numberPlayers = GetNumberOfPlayers();
+            SettingUpPlayers(numberPlayers);
+            player1.ChooseName();
+            player2.ChooseName();
 
         }
 
