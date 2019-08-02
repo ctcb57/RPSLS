@@ -184,7 +184,7 @@ namespace RPSLS
                 }
                 else
                 {
-                    Console.WriteLine(player2Choice + " beats " + player1Choice + ". " + player2Name + "wins this round");
+                    Console.WriteLine(player2Choice + " beats " + player1Choice + ". " + player2Name + " wins this round");
                     player2.winCounter++;
                     Console.WriteLine("The score is " + player1.winCounter + " to " + player2.winCounter + ".");
                     Console.WriteLine("Press enter to begin the next round.");
