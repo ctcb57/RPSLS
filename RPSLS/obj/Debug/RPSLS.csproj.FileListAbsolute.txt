@@ -5,3 +5,6 @@ C:\Users\ctc6\Desktop\devCodeCamp\Week_03\RPSLS\RPSLS\RPSLS\obj\Debug\RPSLS.cspr
 C:\Users\ctc6\Desktop\devCodeCamp\Week_03\RPSLS\RPSLS\RPSLS\obj\Debug\RPSLS.csproj.CoreCompileInputs.cache
 C:\Users\ctc6\Desktop\devCodeCamp\Week_03\RPSLS\RPSLS\RPSLS\obj\Debug\RPSLS.exe
 C:\Users\ctc6\Desktop\devCodeCamp\Week_03\RPSLS\RPSLS\RPSLS\obj\Debug\RPSLS.pdb
+C:\Users\ctc6\Desktop\devCodeCamp\Week_03\RPSLS\RPSLS\RPSLS\obj\Debug\Interop.MediaPlayer.dll
+C:\Users\ctc6\Desktop\devCodeCamp\Week_03\RPSLS\RPSLS\RPSLS\obj\Debug\Interop.WMPLib.dll
+C:\Users\ctc6\Desktop\devCodeCamp\Week_03\RPSLS\RPSLS\RPSLS\obj\Debug\RPSLS.csproj.ResolveComReference.cache

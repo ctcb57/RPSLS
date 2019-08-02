@@ -6,26 +6,34 @@ using System.Threading.Tasks;
 
 namespace RPSLS
 {
-    public class ComputerPlayer : Player
+    public class Computer : Player
     {
         //member variables
+        Random random;
+        List<string> gestures;
 
         //contractor
+        public Computer()
+        {
+            random = new Random();
+            gestures = new List<string>() { "rock", "paper", "scissors", "lizard", "spock" };
+        }
 
         //member methods
         public override string ChooseGesture()
         {
-            Random random = new Random();
-            List<string> gestures = new List<string>() { "rock", "paper", "scissors", "lizard", "spock" };
             int index = random.Next(gestures.Count);
             Console.WriteLine(gestures[index]);
-            return gestures[index];
+            gesture = gestures[index];
+            return gesture;
         }
         public override string ChooseName()
         {
             Console.WriteLine("Choose your opponent's name");
-            name = Console.ReadLine();
-            return name.Trim();
+            name = Console.ReadLine().Trim();
+            Console.Clear();
+            return name;
+            
         }
 
 
