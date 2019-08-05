@@ -186,7 +186,7 @@ namespace RPSLS
             }
             else
             {
-                Console.WriteLine(player2.name + " wins the game!");
+                Console.WriteLine(player2.name + " wins the game! Press enter to continue.");
                 Console.ReadLine();
             }
             Console.Clear();
